@@ -1,0 +1,45 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor and IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+.pytest_cache/
+.mypy_cache/
+
+# Node.js / web dashboard
+node_modules/
+dist/
+build/
+.npm/
+
+# Arduino / embedded build output
+*.elf
+*.hex
+*.bin
+*.map
+*.o
+*.a
+
+# Logs and runtime artifacts
+*.log
+*.tmp
+*.bak
+
+# Data and media outputs (keep folders, ignore generated files)
+datasets/raw/*
+media/runs/*
+!datasets/raw/.gitkeep
+!media/runs/.gitkeep
