@@ -1,6 +1,6 @@
 # Project Roadmap
 
-This roadmap reflects the current prototype stage of Eco Sort Robotics. The first two phases are grounded in the existing hardware bench and safety-oriented control work. Later phases are intentionally planned, not completed.
+This roadmap reflects the current prototype stage of Eco Sort Robotics. The first two phases are completed at the bench level, and the distributed communication layer is now in progress.
 
 ## Phase 1: Robotic Arm Setup and Testing
 Status: completed at the prototype level.
@@ -26,27 +26,32 @@ Status: completed at the prototype level.
 
 This phase establishes the safety-first operating model for future automation work. Additional logic can build on this state machine without bypassing the known safe state.
 
+## Phase 3: Distributed Control and Serial Communication
+Status: in progress.
+
+- Arduino UNO WiFi Rev2 reads sensors and manages a local state machine
+- Python on the laptop relays structured messages between boards
+- Arduino Uno R3 receives only actuator commands and executes Braccio motion
+- Structured protocol work is being added before any higher-level AI logic
+
+This phase is the bridge between bench robotics and the future sensing and automation stack. The goal is to make the control path reliable before adding more intelligence.
+
 ## Planned Future Phases
 
-### Phase 3: Ultrasonic Obstacle Detection
-- Integrate the ultrasonic sensor as the next protective sensing layer
+### Phase 4: Ultrasonic Obstacle Detection
+- Integrate the ultrasonic sensor into the Rev2 decision layer
 - Use distance feedback to prevent unsafe motion near obstacles
 - Define clear thresholds and failure handling behavior
 
-### Phase 4: Object Detection AI
+### Phase 5: Object Detection AI
 - Develop a Python/OpenCV workflow for object-aware perception
 - Define a dataset structure and labeling rules
 - Evaluate lightweight classification approaches before automation is added
 
-### Phase 5: Automated Sorting
+### Phase 6: Automated Sorting
 - Link perception results to robotic handling actions
 - Add sorting logic for sustainability categories
 - Document decision points and failure cases
-
-### Phase 6: Serial Communication
-- Define host-to-Arduino messaging for commands and telemetry
-- Use the Arduino UNO WiFi Rev2 as a future communication-capable control platform
-- Keep the protocol simple, versioned, and testable
 
 ### Phase 7: Dashboard System
 - Add an operator-facing interface for status and diagnostics

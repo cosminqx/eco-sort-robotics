@@ -1,7 +1,7 @@
 # Testing Strategy
 
 ## Purpose
-Testing is treated as an engineering control, not an afterthought. The project is still in early prototyping, so testing focuses on safe motion, clear state behavior, and practical observation rather than formal automation alone.
+Testing is treated as an engineering control, not an afterthought. The project is still in early prototyping, so testing focuses on safe motion, clear state behavior, and protocol reliability rather than formal automation alone.
 
 ## Current Validation Areas
 
@@ -14,6 +14,7 @@ Testing is treated as an engineering control, not an afterthought. The project i
 - Verify that the system can enter the SAFE state reliably
 - Confirm that manual state control works from the arcade button input
 - Ensure the robot remains in a controlled state after stop requests
+- Verify that the Uno R3 stop override works even if the laptop bridge is disconnected
 
 ### LED State Testing
 - Green LED indicates RUNNING mode
@@ -24,10 +25,15 @@ Testing is treated as an engineering control, not an afterthought. The project i
 - Confirm audio alerts occur at the intended state transitions
 - Use buzzer feedback as a quick operator signal during hands-on testing
 
+### Protocol Testing
+- Confirm that Rev2 messages are newline terminated and parse cleanly on the laptop
+- Confirm that Python forwards only valid structured commands to the Uno R3
+- Confirm that the Uno R3 returns ACK or ERR messages for every command
+
 ## Future Testing Areas
 - Ultrasonic sensor response and threshold validation
 - Sensor noise and repeatability checks
-- Serial communication reliability tests
+- Serial communication reliability tests across longer runs
 - Object detection and classification accuracy checks
 - End-to-end sorting workflow validation
 
@@ -36,6 +42,7 @@ For each test cycle, record:
 - Date and test objective
 - Hardware configuration and power source
 - Observed behavior and state transitions
+- Protocol messages exchanged between nodes
 - Failures, anomalies, and suspected causes
 - Follow-up actions or design changes
 
