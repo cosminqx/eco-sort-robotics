@@ -1,18 +1,43 @@
 # Testing Strategy
 
-## Validation Layers
-- Unit-level checks for software modules
-- Hardware-in-the-loop checks for control behavior
-- Integration tests for end-to-end sorting flow
-- Safety checks for motion and error handling
+## Purpose
+Testing is treated as an engineering control, not an afterthought. The project is still in early prototyping, so testing focuses on safe motion, clear state behavior, and practical observation rather than formal automation alone.
+
+## Current Validation Areas
+
+### Servo Testing
+- Confirm that the Braccio joints move only within known safe limits
+- Observe startup behavior, smoothness, and repeatability
+- Record any instability, jitter, or unexpected motion during bench testing
+
+### Emergency Stop Validation
+- Verify that the system can enter the SAFE state reliably
+- Confirm that manual state control works from the arcade button input
+- Ensure the robot remains in a controlled state after stop requests
+
+### LED State Testing
+- Green LED indicates RUNNING mode
+- Red LED indicates STOPPED or SAFE mode
+- Check that state changes are visible from the operator position
+
+### Piezo Feedback Testing
+- Confirm audio alerts occur at the intended state transitions
+- Use buzzer feedback as a quick operator signal during hands-on testing
+
+## Future Testing Areas
+- Ultrasonic sensor response and threshold validation
+- Sensor noise and repeatability checks
+- Serial communication reliability tests
+- Object detection and classification accuracy checks
+- End-to-end sorting workflow validation
 
 ## Test Evidence
 For each test cycle, record:
-- Test objective
-- Configuration and environment
-- Expected behavior
-- Actual behavior
-- Pass/fail and follow-up actions
+- Date and test objective
+- Hardware configuration and power source
+- Observed behavior and state transitions
+- Failures, anomalies, and suspected causes
+- Follow-up actions or design changes
 
-## Current Status
-Test framework and automated suites are planned and will be added as software modules mature.
+## Status
+Automated test coverage is expected to grow as software modules are implemented. For now, disciplined manual validation and engineering notes are the main source of truth.

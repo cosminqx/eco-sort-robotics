@@ -1,66 +1,70 @@
 # Eco Sort Robotics
 
-AI-assisted sustainability sorting robotics project combining computer vision, sensing, and robotic manipulation with the Arduino TinkerKit Braccio platform.
+Eco Sort Robotics is an early-stage robotics and AI-assisted sustainability sorting prototype built around the Arduino Braccio arm, Arduino UNO WiFi Rev2, and a small set of sensors and prototyping components. The repository is organized as an engineering notebook, documentation hub, and future software workspace for a modular sorting system that will gradually move from manual control to autonomous, AI-assisted object handling.
 
 ## Project Overview
-This repository hosts the engineering artifacts, software modules, hardware documentation, and design files for an intelligent sorting system that identifies and separates materials (e.g., plastic, paper, metal) through automation.
+The current focus is safe prototype assembly, repeatable motion control, and controlled-state operation. Phase 1 established the Braccio arm test bench and basic servo experimentation. Phase 2 added a safety-oriented stop system with LED and buzzer feedback so the arm can be placed into a known safe state during development.
 
-## Motivation
-Waste sorting quality and consistency are difficult to maintain in manual workflows. This project explores how accessible robotics and AI can support reliable, repeatable, and educational sustainability-focused automation.
+## Objectives
+- Build a professional robotics platform for sustainability-focused sorting experiments
+- Keep the system modular so hardware, firmware, perception, and UI work can evolve independently
+- Validate motion and power behavior before expanding into automation
+- Document the engineering process clearly enough for portfolio, research, and open-source use
 
-## Sustainability Impact
-- Encourages improved material separation at source
-- Supports education in circular economy and responsible engineering
-- Creates a reusable platform for local sustainability experiments
-
-## Engineering Goals
-- Build a modular, maintainable robotics platform
-- Integrate computer vision and sensor fusion for classification support
-- Design safe, repeatable pick-and-place behavior
-- Document decisions, tests, and iterations with engineering rigor
-
-## System Architecture Overview
-A high-level architecture summary is maintained in [SYSTEM_ARCHITECTURE.md](SYSTEM_ARCHITECTURE.md), with supporting placeholders under [`/docs`](docs/README.md).
+## Current Progress
+- Braccio arm assembly and breadboard prototyping are in place
+- Initial servo testing and calibration exploration have been completed
+- A controlled RUNNING and SAFE state system is implemented with arcade button input
+- Green and red LEDs provide immediate state indication
+- The piezo buzzer is used for feedback alerts during state changes
 
 ## Hardware Stack
-- Arduino TinkerKit Braccio robotic arm
-- Vision capture hardware (camera module)
-- Material detection sensors (to be finalized and documented)
-- Power and safety subsystems
+- Arduino Braccio robotic arm
+- 1x Arduino UNO WiFi Rev2
+- 1x Arduino Education Shield
+- 1x large breadboard and 1x mini breadboard
+- Additional jumper wires and USB cable
+- 9V battery connector
+- 1x ultrasonic sensor, 1x phototransistor, 1x potentiometer with knob, and 2x arcade buttons
+- Piezo buzzer, additional 5mm LEDs, additional 10mm LEDs, resistors, and modular prototyping pieces
 
-See [HARDWARE_REQUIREMENTS.md](HARDWARE_REQUIREMENTS.md) and [`/hardware`](hardware/README.md).
+The Arduino UNO WiFi Rev2 is reserved for future communication and connected-system experiments. The Education Shield is useful for simplifying sensor and prototyping integration during early-stage testing.
 
 ## Software Stack
-- Arduino firmware/control layer
-- Python-based vision and AI tooling
-- Serial communication bridge
-- Optional dashboard/web interface
+- Arduino firmware for state control and motion experimentation
+- Serial communication planning for future host integration
+- Python computer vision and AI modules under staged development
+- Future dashboard and monitoring tools for diagnostics and observability
 
-See [SOFTWARE_SETUP.md](SOFTWARE_SETUP.md) and [`/software`](software/README.md).
+See [SOFTWARE_SETUP.md](SOFTWARE_SETUP.md) and [software/README.md](software/README.md) for the planned software structure.
 
-## AI / Computer Vision Overview
-The AI pipeline placeholders and model-development notes are tracked in:
-- [`/software/python-computer-vision`](software/python-computer-vision/README.md)
-- [`/software/ai-object-detection`](software/ai-object-detection/README.md)
-- [`/datasets`](datasets/README.md)
+## Roadmap Summary
+The project is moving from manual robotics validation toward a modular sensing, perception, and sorting pipeline. The roadmap documents the confirmed prototype phases and the planned integration phases for obstacle detection, AI classification, serial communication, and operator tooling.
 
-## Robotics Overview
-Robotics control, calibration, wiring, and power considerations are organized in:
-- [`/hardware`](hardware/README.md)
-- [`/software/arduino-control`](software/arduino-control/README.md)
-- [`/cad`](cad/README.md)
+See [PROJECT_ROADMAP.md](PROJECT_ROADMAP.md) for the phase-by-phase plan.
 
-## Future Plans
-See [PROJECT_ROADMAP.md](PROJECT_ROADMAP.md) for staged milestones and technical growth paths.
+## Repository Structure
+- [hardware/](hardware/README.md) for wiring, calibration, power, and electronics notes
+- [software/](software/README.md) for firmware, vision, communication, and UI work
+- [cad/](cad/README.md) for mechanical concepts and redesign notes
+- [docs/](docs/README.md) for supporting technical documentation
+- [datasets/](datasets/README.md) for dataset planning and management
+- [tests/](tests/README.md) for validation notes and future automated checks
+- [journal/](journal/README.md) for engineering log entries
+- [media/](media/README.md) for demo captures and experiment assets
 
-## Development Roadmap
-Roadmap phases, deliverables, and verification checkpoints are documented in [PROJECT_ROADMAP.md](PROJECT_ROADMAP.md).
+## Future Goals
+- Add ultrasonic obstacle detection as the next sensing stage
+- Introduce AI-assisted object classification using Python and OpenCV
+- Connect Arduino control to host software through a serial protocol
+- Build a sustainable sorting workflow with clear decision tracing
+- Add dashboard and analytics support for monitoring, debugging, and reporting
 
-## Media / Demo
-Use [`/media`](media/README.md) for demo videos, photos, and validated experiment captures.
-
-## Contribution
-Contribution workflow, quality expectations, and review process are available in [CONTRIBUTING.md](CONTRIBUTING.md).
+## Supporting Documentation
+- [SYSTEM_ARCHITECTURE.md](SYSTEM_ARCHITECTURE.md)
+- [HARDWARE_REQUIREMENTS.md](HARDWARE_REQUIREMENTS.md)
+- [TESTING.md](TESTING.md)
+- [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## License
 This project is licensed under the terms in [LICENSE](LICENSE).
