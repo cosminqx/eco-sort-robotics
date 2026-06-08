@@ -55,5 +55,7 @@ ERR|node=uno_r3|code=UNKNOWN_ACTION|message=Unrecognized command
 - Add optional timestamps if timing analysis becomes necessary
 - Keep the protocol versioned before any AI or dashboard layer is added
 
+Note: the first live protocol traces should be captured once the Python bridge is functional. The intended board-to-board flow is Rev2 -> Python -> Uno R3; direct board-to-board links are intentionally avoided.
+
 ## TODO
 - Capture the first live protocol trace once the distributed path is running end to end

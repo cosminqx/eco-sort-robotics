@@ -7,10 +7,10 @@ This folder separates the software work into small, testable areas so firmware, 
 - Make the laptop bridge explicit instead of hidden inside one firmware file
 - Avoid coupling the prototype to a single monolithic application
 
-## Current Software Roles
-- Arduino control firmware on the Uno R3 handles deterministic servo execution and emergency stop behavior
-- Arduino firmware on the UNO WiFi Rev2 reads sensors and emits structured state messages
-- Python on the laptop validates, routes, and logs messages between the boards
+## Current Software Roles (status as of 2026-06-08)
+- Arduino control firmware on the Uno R3 handles deterministic servo execution and emergency stop behavior (operational)
+- Arduino firmware on the UNO WiFi Rev2 reads sensors and emits structured state messages (deployed; ultrasonic validation pending)
+- Python on the laptop validates, routes, and logs messages between the boards (planned bridge in development)
 - Future computer vision and AI work will live on the laptop, not on the Uno R3
 
 ## Subdirectories

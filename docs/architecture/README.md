@@ -17,7 +17,7 @@ This directory is reserved for deeper architecture references that complement [S
 
 ## Current Use
 - Architecture planning remains lightweight while the prototype is still in early integration
-- Keep notes here only when they support a concrete implementation or integration decision
+- The Phase 3 dual-controller deployment (2026-06-08) is captured in [SYSTEM_ARCHITECTURE.md](../../SYSTEM_ARCHITECTURE.md). Use this folder for detailed diagrams and protocol specifications once the Python bridge and ultrasonic validation are complete.
 
 ## TODO
 - Add the first subsystem diagram or decision record when the architecture stabilizes enough to justify it

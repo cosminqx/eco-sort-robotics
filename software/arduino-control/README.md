@@ -9,6 +9,8 @@ This folder is reserved for the embedded control layer that drives the Braccio a
 - Command handling from the Python bridge
 - LED and buzzer feedback for state changes and manual overrides
 
+Status (2026-06-08): Uno R3 firmware is operational and tested for the core safe-state and motion behaviours. Continue to keep firmware focused on actuator control and safe-state enforcement.
+
 ## Design Notes
 - Keep control logic deterministic and easy to reason about
 - Treat safety state handling as part of the core firmware, not an optional feature

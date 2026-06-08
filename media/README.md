@@ -14,3 +14,6 @@ This folder is for photos, clips, and run captures that document the prototype a
 
 ## TODO
 - Add selection criteria for what qualifies as a keepable demo asset
+
+Phase 3 placeholders:
+- media/2026-06-08-phase3/ — placeholders for setup photos and a short demo captured on 2026-06-08

@@ -37,6 +37,11 @@ Testing is treated as an engineering control, not an afterthought. The project i
 - Object detection and classification accuracy checks
 - End-to-end sorting workflow validation
 
+Current priorities (next test cycles):
+- Complete ultrasonic sensor validation on the UNO WiFi Rev2 (mounting done; software validation pending)
+- Record first live protocol traces through the Python bridge once the bridge is functional
+- Verify emergency stop behaviour under partial integration (e.g., Python disconnected)
+
 ## Test Evidence
 For each test cycle, record:
 - Date and test objective

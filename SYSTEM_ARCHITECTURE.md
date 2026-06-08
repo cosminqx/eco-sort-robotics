@@ -1,16 +1,16 @@
 # System Architecture
 
 ## Purpose
-This document defines the current technical boundaries of Eco Sort Robotics. The system is intentionally distributed so sensor logic, communication, and real-time actuation remain separate and testable.
+This document defines the current technical boundaries of Eco Sort Robotics. As of 2026-06-08 the repository documents a deliberate dual-controller architecture that separates motion control from perception and sensor processing.
 
 ## Architecture Summary
-The current architecture is a three-node pipeline: the Arduino UNO WiFi Rev2 owns sensing and local state logic, the laptop running Python owns message routing and future AI, and the Arduino Uno R3 owns deterministic servo control for the Braccio arm. The boards do not bypass one another, and the WiFi Rev2 does not directly drive servos.
+The current architecture is a three-node pipeline: the Arduino UNO WiFi Rev2 owns sensing and local state logic, the laptop running Python owns message routing and future intelligence, and the Arduino Uno R3 owns deterministic servo control for the Braccio arm. The boards operate independently on the bench and do not bypass one another; the WiFi Rev2 does not directly drive servos.
 
 ```mermaid
 flowchart LR
-	Sensors[Ultrasonic sensor, phototransistor, buttons] --> Rev2[Arduino UNO WiFi Rev2]
-	Rev2 -->|serial sensor/state packets| Python[Laptop Python bridge]
-	Python -->|structured commands| R3[Arduino Uno R3]
+	Sensors[Ultrasonic sensor, phototransistor, buttons] --> Rev2[Arduino UNO WiFi Rev2\n(Education Shield)]
+	Rev2 -->|serial sensor/state packets| Python[Laptop Python bridge]\n(Python bridge is future work)
+	Python -->|structured commands| R3[Arduino Uno R3\n(Braccio controller)]
 	R3 -->|deterministic servo control| Braccio[Braccio robotic arm]
 	R3 -->|status / stop feedback| Python
 ```
@@ -48,15 +48,14 @@ flowchart LR
 - Error messages are explicit and machine-readable
 - STOP has priority over all motion commands
 
-## Future Modular Architecture
-The next architecture step is to keep the protocol stable while adding additional sensing, classification, and monitoring. This allows the project to scale without turning any single firmware file into a monolithic controller.
+## Future Modular Architecture (marked as future work)
+The next architecture step is to keep the protocol stable while adding additional sensing, classification, and monitoring. The following components are planned and should be considered future work until implemented and validated:
 
-Planned modules include:
-- Motion and state control on Uno R3
-- Proximity and safety sensing on WiFi Rev2
-- Serial communication bridge on Python
-- Vision and classification on Python
-- Operator dashboard and metrics
+- Motion and state control on Uno R3 (current)
+- Proximity and safety sensing on WiFi Rev2 (current hardware; ultrasonic validation pending)
+- Serial communication bridge on Python (planned, in development)
+- Vision and classification on Python (future)
+- Operator dashboard and metrics (future)
 
 ## Architecture Decisions Log
 - Keep safety logic local to the embedded control layer

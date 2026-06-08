@@ -13,6 +13,8 @@ This folder collects practical notes for the current prototype hardware stack. I
 - Arduino UNO WiFi Rev2 and Arduino Education Shield for future prototyping paths
 - Breadboard-based integration of buttons, LEDs, buzzer, potentiometer, phototransistor, and ultrasonic sensor planning
 
+Note (2026-06-08): The project has adopted a dual-controller architecture separating motion (Uno R3) and perception (UNO WiFi Rev2). The ultrasonic sensor has been mounted on the Rev2 platform; software-level validation remains a priority.
+
 ## Files
 - [electronics-notes.md](electronics-notes.md)
 - [wiring-diagrams.md](wiring-diagrams.md)

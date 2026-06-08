@@ -33,5 +33,7 @@ This document tracks the current and planned sensing elements for the prototype.
 - Integration notes: should be added once safe-state behavior is stable and thresholds can be tested properly
 - Risks or limitations: false readings, alignment sensitivity, and threshold tuning will need careful validation
 
+Status (2026-06-08): Ultrasonic sensor is physically mounted on the UNO WiFi Rev2 platform. Software-level validation, filtering, and threshold tuning are still outstanding and must be completed before any automated response is trusted.
+
 ## TODO
 - Add measured values, pin assignments, and placement notes once each sensor is wired and tested

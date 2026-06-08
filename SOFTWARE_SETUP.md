@@ -36,6 +36,8 @@ This document covers the software environments that support the current prototyp
 - Open the laptop serial port for the Rev2 at a fixed baud rate
 - Verify that messages are readable before adding any routing logic
 
+Note: the current preferred board-to-board communication path is WiFi Rev2 -> Python bridge -> Uno R3. Direct board-to-board links are intentionally avoided to preserve modularity and fault isolation.
+
 ### Step 3: Python Bridge Script
 - Open one serial connection to the WiFi Rev2 and one to the Uno R3
 - Parse messages into key/value fields instead of relying on free-form text

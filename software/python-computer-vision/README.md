@@ -18,6 +18,8 @@ This folder will hold the Python-based perception and AI pipeline used later for
 - The computer vision pipeline is planned, not yet integrated into the active control loop
 - The current focus remains on stable robotics, serial routing, and safe embedded control
 
+Status (2026-06-08): Python remains primarily a planned bridge and future perception host. Priorities are establishing a minimal serial bridge and capturing initial protocol traces before integrating vision workloads.
+
 ## Future Work
 - Establish a repeatable image capture workflow when perception work starts
 - Define preprocessing steps that match the eventual dataset format

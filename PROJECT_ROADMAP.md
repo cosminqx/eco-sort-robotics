@@ -26,15 +26,15 @@ Status: completed at the prototype level.
 
 This phase establishes the safety-first operating model for future automation work. Additional logic can build on this state machine without bypassing the known safe state.
 
-## Phase 3: Distributed Control and Serial Communication
-Status: in progress.
+## Phase 3: Perception Layer Development (Distributed Control)
+Status: in progress. (Milestone reached 2026-06-08)
 
-- Arduino UNO WiFi Rev2 reads sensors and manages a local state machine
-- Python on the laptop relays structured messages between boards
-- Arduino Uno R3 receives only actuator commands and executes Braccio motion
-- Structured protocol work is being added before any higher-level AI logic
+- Dual-controller deployment completed: Arduino Uno R3 (motion) and UNO WiFi Rev2 (perception) are operating independently on the bench.
+- UNO WiFi Rev2: deployed with the Education Shield; ultrasonic sensor mounted but software validation and threshold tuning are still in progress.
+- Uno R3: continues to operate the Braccio arm, run deterministic servo sequences, and enforce emergency stop and safe-state behaviours.
+- Python bridge and structured protocol design: in active development; serial routing will be the only board-to-board channel.
 
-This phase is the bridge between bench robotics and the future sensing and automation stack. The goal is to make the control path reliable before adding more intelligence.
+This phase consolidates the communication and separation boundaries so sensing and decision logic evolve independently from the real-time actuator controller. The immediate goals are sensor validation, protocol stabilization, and a minimal Python bridge demonstration.
 
 ## Planned Future Phases
 

@@ -14,6 +14,8 @@ This file is the place for authoritative wiring references once the prototype co
 - The Arduino UNO WiFi Rev2 is reserved for future communication-oriented work
 - The Arduino Education Shield should simplify prototyping and sensor routing during later integration
 
+Note (2026-06-08): The current bench layout uses separate controllers for motion and perception. When finalizing wiring diagrams, include explicit pin maps for the Rev2 sensor mounting and the Uno R3 Braccio connections, and note that board-to-board communication will use the laptop bridge as the only router.
+
 ## Validation Checklist
 - Confirm each wire before power-up
 - Check that all grounds are consistent across the bench setup

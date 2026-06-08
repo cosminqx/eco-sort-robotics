@@ -19,3 +19,4 @@ This directory is for chronological engineering notes, test observations, and de
 ## Files
 - [ENGINEERING_LOG_TEMPLATE.md](ENGINEERING_LOG_TEMPLATE.md)
 - [2026-05-25-dual-board-integration.md](2026-05-25-dual-board-integration.md)
+ - [2026-06-08-phase3-launch.md](2026-06-08-phase3-launch.md)

@@ -15,6 +15,11 @@ Short summary of the test, build step, or design change.
 - Python bridge role:
 - Uno R3 role:
 
+## Controller Separation Checklist
+- Is the Uno R3 firmware responsible only for actuator commands and safe-state enforcement? (yes/no)
+- Is the UNO WiFi Rev2 firmware limited to sensing and local state emission only? (yes/no)
+- Is the Python bridge the only planned board-to-board router? (yes/no)
+
 ## Goals
 -
 

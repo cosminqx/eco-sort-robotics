@@ -12,6 +12,8 @@ This document defines the confirmed hardware inventory and the minimum requireme
 - Additional jumper wire set and USB cable
 - 9V battery connector
 
+Note (2026-06-08): The dual-controller layout is the current engineering decision. The Uno R3 remains the motion controller and the UNO WiFi Rev2 is dedicated to perception and sensor work. The ultrasonic sensor is physically mounted but its software validation is ongoing.
+
 ## Confirmed Inputs and Indicators
 - 1x ultrasonic sensor
 - 1x phototransistor
@@ -30,6 +32,10 @@ This document defines the confirmed hardware inventory and the minimum requireme
 - The UNO WiFi Rev2 must not directly drive servos or bypass the laptop bridge
 - The laptop must remain the structured communication path between the two boards
 - Future AI and policy logic should live on the laptop, not in the servo control firmware
+
+Rationale:
+- Braccio library compatibility and stable servo timing make the Uno R3 the appropriate deterministic controller.
+- The UNO WiFi Rev2 provides better modularity for sensors and future connectivity experiments while keeping actuator timing isolated.
 
 ## Electrical and Power Requirements
 - The Braccio servos should not be assumed to run safely from an undersized supply path

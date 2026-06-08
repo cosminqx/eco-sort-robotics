@@ -1,6 +1,6 @@
 # Eco Sort Robotics
 
-Eco Sort Robotics is an early-stage robotics and sustainability automation prototype built as a distributed system. The current architecture uses an Arduino Uno R3 for deterministic Braccio arm control, an Arduino UNO WiFi Rev2 for sensing and local decision logic, and a laptop running Python as the communication bridge and future AI layer.
+Eco Sort Robotics is an early-stage robotics and sustainability automation prototype built as a distributed system. As of 2026-06-08 the project has reached a milestone: a dual-controller architecture has been established with a clear separation between motion control and perception.
 
 ## Project Overview
 The project is currently focused on safe prototype assembly, repeatable motion control, and clean separation of responsibilities between boards. Phase 1 established the Braccio arm test bench and basic servo experimentation. Phase 2 added a safety-oriented stop system with LED and buzzer feedback so the arm can be placed into a known safe state during development. Phase 3 is now in progress and is centered on the distributed control path.
@@ -18,6 +18,11 @@ The project is currently focused on safe prototype assembly, repeatable motion c
 - Green and red LEDs provide immediate state indication
 - The piezo buzzer is used for feedback alerts during state changes
 - Dual-board integration is underway with the laptop acting as the communication bridge
+
+Milestone (2026-06-08):
+- Dual-controller architecture established: Uno R3 (motion) + UNO WiFi Rev2 (perception)
+- Uno R3: operational, tested, stable — handling Braccio motion, safe-state, LEDs, buzzer
+- UNO WiFi Rev2: installed and operational as a standalone perception controller; ultrasonic sensor mounted but software validation pending
 
 ## Distributed Architecture
 - Arduino UNO WiFi Rev2 reads sensors and maintains the local state machine
